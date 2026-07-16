@@ -1,0 +1,6 @@
+output/
+*.webp
+.git/
+.gitignore
+test/
+examples/

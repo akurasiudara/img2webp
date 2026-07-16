@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+const { spawn } = require('child_process');
+const path = require('path');
+const fs = require('fs');
+
+// Path ke script bash
+const scriptPath = path.join(__dirname, '..', 'webp.sh');
+
+// Cek apakah script ada
+if (!fs.existsSync(scriptPath)) {
+    console.error('Error: webp.sh script not found!');
+    process.exit(1);
+}
+
+// Ambil arguments dari command line
+const args = process.argv.slice(2);
+
+// Jalankan script bash dengan arguments
+const child = spawn('bash', [scriptPath, ...args], {
+    stdio: 'inherit',
+    cwd: process.cwd()
+});
+
+child.on('close', (code) => {
+    process.exit(code);
+});
+
+child.on('error', (err) => {
+    if (err.code === 'ENOENT') {
+        console.error('Error: Bash not found. This tool requires bash to be installed.');
+    } else {
+        console.error('Error:', err.message);
+    }
+    process.exit(1);
+});

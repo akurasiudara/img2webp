@@ -1,0 +1,33 @@
+{
+  "name": "@akurasiudara/img2webp",
+  "version": "1.0.0",
+  "description": "Simple command-line tool to convert images to WebP format",
+  "main": "index.js",
+  "bin": {
+    "img2webp": "bin/img2webp"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["webp", "image", "converter", "cli", "img2webp"],
+  "author": "Ifan Irfansyah",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "bin/",
+    "webp.sh",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akurasiudara/img2webp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akurasiudara/img2webp/issues"
+  },
+  "homepage": "https://github.com/akurasiudara/img2webp#readme"
+}
