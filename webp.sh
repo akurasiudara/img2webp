@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Version and help
-VERSION="1.0.0"
+VERSION="1.2.0"
 SCRIPT_NAME="img2webp"
 
 show_help() {

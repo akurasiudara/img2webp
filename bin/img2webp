@@ -13,9 +13,9 @@ if (!fs.existsSync(scriptPath)) {
     process.exit(1);
 }
 
-// Set environment variable untuk cwebp-bin path
-const cwebpPath = require('cwebp-bin');
-process.env.CWEBP_PATH = cwebpPath;
+// Set environment variable untuk libwebp-static path
+const libwebpStatic = require('libwebp-static');
+process.env.CWEBP_PATH = libwebpStatic.cwebp;
 
 // Ambil arguments dari command line
 const args = process.argv.slice(2);

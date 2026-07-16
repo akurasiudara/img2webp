@@ -4,15 +4,80 @@ Simple command-line tool to convert images (JPG, JPEG, PNG) to WebP format.
 
 ## Installation
 
+### Via npm
 ```bash
 npm install -g @akurasiudara/img2webp
 ```
 
-**That's it!** The package includes all necessary WebP conversion tools automatically.
+### Via yarn
+```bash
+yarn global add @akurasiudara/img2webp
+```
+
+### Via pnpm
+```bash
+pnpm install -g @akurasiudara/img2webp
+```
+
+### Via bun
+```bash
+bun install -g @akurasiudara/img2webp
+```
+
+### Alternative Installation Methods
+
+#### Direct from GitHub
+```bash
+# Via npm
+npm install -g akurasiudara/img2webp
+
+# Via bun
+bun install -g github:akurasiudara/img2webp
+```
+
+#### Using npx (No Installation Required)
+```bash
+npx @akurasiudara/img2webp --help
+npx @akurasiudara/img2webp photo.jpg 85
+```
+
+#### Using bunx (Bun equivalent of npx)
+```bash
+bunx @akurasiudara/img2webp --help
+bunx @akurasiudara/img2webp photo.jpg 85
+```
+
+### Package Manager Compatibility
+
+| Package Manager | Command | Status |
+|----------------|---------|---------|
+| **npm** | `npm install -g @akurasiudara/img2webp` | ✅ Full support |
+| **yarn** | `yarn global add @akurasiudara/img2webp` | ✅ Full support |
+| **pnpm** | `pnpm install -g @akurasiudara/img2webp` | ✅ Full support |
+| **bun** | `bun install -g @akurasiudara/img2webp` | ✅ Full support |
+| **npx** | `npx @akurasiudara/img2webp` | ✅ No installation needed |
+| **bunx** | `bunx @akurasiudara/img2webp` | ✅ No installation needed |
 
 ### Requirements
-- **Node.js** (v12 or higher)
+- **Node.js** (v12 or higher) or **Bun runtime**
 - **bash** (available on Linux/macOS, on Windows use WSL or Git Bash)
+
+## Platform Support
+
+### Operating Systems
+- ✅ **Linux** (x64, arm64)
+- ✅ **macOS** (Intel, Apple Silicon)  
+- ✅ **Windows** (x64) with WSL/Git Bash
+
+### JavaScript Runtimes
+- ✅ **Node.js** v12+
+- ✅ **Bun** v0.1+
+
+### Package Managers
+- ✅ **npm** (Node Package Manager)
+- ✅ **yarn** (Yet Another Resource Negotiator)
+- ✅ **pnpm** (Performant npm)
+- ✅ **bun** (Fast all-in-one toolkit)
 
 ## Usage
 
