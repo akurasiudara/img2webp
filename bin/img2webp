@@ -13,13 +13,18 @@ if (!fs.existsSync(scriptPath)) {
     process.exit(1);
 }
 
+// Set environment variable untuk cwebp-bin path
+const cwebpPath = require('cwebp-bin');
+process.env.CWEBP_PATH = cwebpPath;
+
 // Ambil arguments dari command line
 const args = process.argv.slice(2);
 
 // Jalankan script bash dengan arguments
 const child = spawn('bash', [scriptPath, ...args], {
     stdio: 'inherit',
-    cwd: process.cwd()
+    cwd: process.cwd(),
+    env: process.env
 });
 
 child.on('close', (code) => {
@@ -29,6 +34,7 @@ child.on('close', (code) => {
 child.on('error', (err) => {
     if (err.code === 'ENOENT') {
         console.error('Error: Bash not found. This tool requires bash to be installed.');
+        console.error('On Windows, you can use Git Bash or WSL.');
     } else {
         console.error('Error:', err.message);
     }

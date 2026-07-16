@@ -4,31 +4,15 @@ Simple command-line tool to convert images (JPG, JPEG, PNG) to WebP format.
 
 ## Installation
 
-### Via npm (Global)
 ```bash
 npm install -g @akurasiudara/img2webp
 ```
 
-### Prerequisites
-- **cwebp** must be installed on your system
+**That's it!** The package includes all necessary WebP conversion tools automatically.
+
+### Requirements
+- **Node.js** (v12 or higher)
 - **bash** (available on Linux/macOS, on Windows use WSL or Git Bash)
-
-#### Install cwebp:
-
-**Ubuntu/Debian:**
-```bash
-sudo apt update
-sudo apt install webp
-```
-
-**macOS (Homebrew):**
-```bash
-brew install webp
-```
-
-**Windows:**
-- Download from [Google WebP](https://developers.google.com/speed/webp/download)
-- Or use [Chocolatey](https://chocolatey.org/): `choco install webp`
 
 ## Usage
 

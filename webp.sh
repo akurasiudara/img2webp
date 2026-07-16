@@ -72,10 +72,16 @@ esac
 QUALITY=${2:-80}
 INPUT_FILE="$1"
 
-# Check if cwebp is installed
-if ! command -v cwebp >/dev/null 2>&1; then
-    echo "Error: cwebp is not installed!"
-    echo "Please install webp tools:"
+# Check if cwebp is available
+CWEBP_CMD="cwebp"
+
+# Use bundled cwebp-bin if available (from Node.js wrapper)
+if [[ -n "$CWEBP_PATH" && -f "$CWEBP_PATH" ]]; then
+    CWEBP_CMD="$CWEBP_PATH"
+elif ! command -v cwebp >/dev/null 2>&1; then
+    echo "Error: cwebp is not available!"
+    echo "This package should include cwebp binary automatically."
+    echo "If this error persists, please install cwebp manually:"
     echo "  Ubuntu/Debian: sudo apt install webp"
     echo "  macOS: brew install webp"
     echo "  Windows: choco install webp"
@@ -95,7 +101,7 @@ convert_file() {
         return
     fi
 
-    if cwebp -q "$QUALITY" "$img" -o "$output" >/dev/null 2>&1; then
+    if $CWEBP_CMD -q "$QUALITY" "$img" -o "$output" >/dev/null 2>&1; then
         echo "Converted: $img -> $output (quality=$QUALITY)"
     else
         echo "Failed to convert: $img"
